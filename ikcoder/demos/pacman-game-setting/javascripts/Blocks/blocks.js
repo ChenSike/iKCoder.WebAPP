@@ -173,8 +173,8 @@ Blockly.Blocks['pacman_player'] = {
 Blockly.JavaScript['pacman_player'] = function (block) {
     var code = "";
     var color = block.getFieldValue('pacman_player_color');
-    var pointX = block.getFieldValue('pacman_player_x');
-    var pointY = block.getFieldValue('pacman_player_y');
+    var pointX = Blockly.JavaScript.valueToCode(block, 'pacman_player_x', Blockly.JavaScript.ORDER_ATOMIC);
+    var pointY = Blockly.JavaScript.valueToCode(block, 'pacman_player_y', Blockly.JavaScript.ORDER_ATOMIC);
     if (pointX) {
         code = 'Scene.setPlayer("' + color + '", ' + pointX + ', ' + pointY + ');\n';
     }
